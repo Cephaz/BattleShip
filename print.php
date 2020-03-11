@@ -89,9 +89,10 @@
         return($grid);
     }
 
-    function shoot($grid)
+    function shoot($player)
     {
         $flag = false;
+        $grid = $player->getGridogships();
         print(printGame($grid));
 
         while (!$flag)
@@ -117,5 +118,6 @@
                 if (checkit($y-1, $x-1, $grid))
                     $grid[$y-1][$x-1] = 2;
         }
+        $player->setGridogships($grid);
     }
 ?>
